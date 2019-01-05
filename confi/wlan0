@@ -1,0 +1,11 @@
+# wifi (com internet ou não)
+# pode ser utilizado tambem como controle remoto
+##################################################
+auto wlan0
+iface wlan0 inet dhcp
+        #address 192.168.25.43/24
+        wpa-ssid "nome"
+        wpa-psk "senha"
+
+
+

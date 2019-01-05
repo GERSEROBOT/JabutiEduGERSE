@@ -1,0 +1,12 @@
+#interface cabeada ip estatico
+#interface para configuração
+#não mudar
+##################################################
+auto eth0
+iface eth0 inet static
+        address 192.168.42.43
+        netmask 255.255.255.0
+        gateway 192.168.42.24
+
+
+

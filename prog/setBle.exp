@@ -1,0 +1,37 @@
+#!/usr/bin/expect -f
+
+#set MAC_BLE [lindex $argv 0]
+#MSC_BLE+="[CHG] Controller "
+#MSC_BLE+=$MAC_BLE
+#MSC_BLE+=" Discoverable: yes"
+
+set timeout 60
+
+exp_internal 1
+spawn bluetoothctl
+expect "# "
+
+send "power on\r"
+#expect "Changing power on succeeded"
+expect "# "
+
+send "discoverable on\r"
+#expect "[CHG] Controller B8:27:EB:D6:5D:02 Discoverable: yes"
+expect "# "
+
+send "pairable on\r"
+#expect "Changing pairable on succeeded"
+expect "# "
+
+send "agent on\r"
+#expect "Agent registered"
+expect "# "
+
+send "default-agent\r"
+#expect "Default agent request successful"
+expect "# "
+
+send “exit \r”		# está dando erro, mas não impede que o programa funcione
+expect eof
+
+exit 0
